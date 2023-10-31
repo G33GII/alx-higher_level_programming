@@ -10,6 +10,6 @@ elif (_mod > 0 and _mod < 6):
     # print("Last digit of {} is {} and is less than 6 and not 0"
     #                                           .format(number, _mod))
 else:
-    print(f"Last digit of {number} is {_mod} and is graeter than 5")
-    # print("Last digit of {} is {} and is graeter than 5"
+    print(f"Last digit of {number} is {_mod} and is greater than 5")
+    # print("Last digit of {} is {} and is greater than 5"
     #                                       .format(number, _mod))
