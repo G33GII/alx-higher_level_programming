@@ -1,3 +1,4 @@
 #!/usr/bin/python3
 for num in range(99):
-    print("{:2d} = 0x{:02X}".format(num, num))
+    print("{:2d} = 0x{:02x}".format(num, num))
+
