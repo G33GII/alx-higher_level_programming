@@ -1,5 +1,5 @@
-"""
 #!/usr/bin/python3
+"""
 
 if __name__ == "__main__":
     import sys
@@ -14,8 +14,6 @@ if __name__ == "__main__":
     print(_av)
 """
 
-
-#!/usr/bin/python3
 
 def add_arg(argv):
     n = len(argv) - 1
