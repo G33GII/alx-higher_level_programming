@@ -23,7 +23,7 @@ if __name__ == "__main__":
 
     # Get the operands from the command-line arguments
     operand_a = int(sys.argv[1])
-    operand_b = int(sys.argv[3]
+    operand_b = int(sys.argv[3])
 
     # Perform the operation based on the operator
     if operator == '+':
