@@ -4,6 +4,8 @@ if __name__ == "__main__":
     _dx = len(sys.argv)
 
     if (_dx == 1):
+        print("{} arguments.".format(_dx - 1))
+    elif (_dx == 2):
         print("{} argument.".format(_dx - 1))
     else:
         print("{} arguments:".format(_dx - 1))
