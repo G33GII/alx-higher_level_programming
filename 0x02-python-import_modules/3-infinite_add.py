@@ -1,3 +1,4 @@
+"""
 #!/usr/bin/python3
 
 if __name__ == "__main__":
@@ -11,9 +12,11 @@ if __name__ == "__main__":
         fx = int(av[i])
         _av += fx
     print(_av)
+"""
 
-    """
-    #!/usr/bin/python3
+
+#!/usr/bin/python3
+
 def add_arg(argv):
     n = len(argv) - 1
     if n == 0:
@@ -31,5 +34,3 @@ def add_arg(argv):
 if __name__ == "__main__":
     import sys
     add_arg(sys.argv)
-
-    """
