@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-if __name__ == "__main__":
+"""if __name__ == "__main__":
     import sys
 
     # Get the number of command-line arguments
@@ -37,3 +37,38 @@ if __name__ == "__main__":
 
     # Print the result of the operation
     print(f"{operand_a} {operator} {operand_b} = {result}")
+#!/usr/bin/python3
+"""
+
+if __name__ == "__main__":
+    from sys import argv
+    from calculator_1 import add, sub, mul, div
+
+    # Get the number of command-line arguments
+    argc = len(argv)
+
+    # Check if the correct number of arguments is provided
+    if argc != 4:
+        print('Usage: {} <a> <operator> <b>'.format(argv[0]))
+        exit(1)
+
+    # Define a dictionary to map operators to their respective functions
+    operators = {
+        '+': add,
+        '-': sub,
+        '*': mul,
+        '/': div
+    }
+
+    # Check if the provided operator is valid
+    if argv[2] in operators:
+        num1 = int(argv[1])
+        num2 = int(argv[3])
+        operation = operators[argv[2]]
+        result = operation(num1, num2)
+        print('{:d} {:s} {:d} = {:d}'.format(num1, argv[2], num2, result))
+    else:
+        print('Unknown operator. Available operators: +, -, * and /')
+        exit(1)
+
+    exit(0)
