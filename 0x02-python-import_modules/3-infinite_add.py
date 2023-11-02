@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+import sys
+
 """
 
 if __name__ == "__main__":
@@ -15,20 +17,15 @@ if __name__ == "__main__":
 """
 
 
-def add_arg(argv):
-    n = len(argv) - 1
-    if n == 0:
-        print("{:d}".format(n))
-        return
-    else:
-        i = 1
-        add = 0
-        while i <= n:
-            add += int(argv[i])
-            i += 1
-        print("{:d}".format(add))
+if __name__ == "__main":
+    # Initialize the result to 0
+    result = 0
 
+    # Iterate through the command-line arguments (excluding the script name)
+    for arg in sys.argv[1:]:
+        # Cast each argument to an integer and add it to the result
+        result += int(arg)
 
-if __name__ == "__main__":
-    import sys
-    add_arg(sys.argv)
+    # Print the result
+    print(result)
+
