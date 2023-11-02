@@ -1,4 +1,20 @@
 #!/usr/bin/python3
+if __name__ == "__main__":
+    import sys
+    av = sys.argv
+    _dx = len(sys.argv) - 1
+
+    if (_dx == 0):
+        print("{} arguments.".format(_dx))
+    elif (_dx == 1):
+        print("{} argument.".format(_dx))
+    else:
+        print("{} arguments:".format(_dx))
+    for i in range(1, _dx + 1):
+        print("{}: {}".format(i, av[i]))
+
+'''
+#!/usr/bin/python3
 #  Prints the number of and the list of its arguments
 if __name__ == "__main__":
     import sys
@@ -17,3 +33,5 @@ if __name__ == "__main__":
     else:
         print("{} argument:".format(size))
         print("{}: {}".format(size, arg[1]))
+'''
+ 
