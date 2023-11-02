@@ -28,4 +28,3 @@ if __name__ == "__main":
 
     # Print the result
     print(result)
-
