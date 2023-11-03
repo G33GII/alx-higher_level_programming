@@ -36,17 +36,15 @@ print(_fibonacci(800))
 """
 import sys
 sys.stdout.write("#pythoniscool\n")
-"""
-=============================================
-"""
-# Dynamically import the sys module
+
+*******************************************
+
 sys = __import__('sys')
-
-# Get the command-line arguments
+sys.stdout.write("#pythoniscool\n")
 arguments = sys.argv
-
-# Print the command-line arguments
 for i, arg in enumerate(arguments):
     print(f"Argument {i}: {arg}")
+
 """
-===============================
+=============================================
+
