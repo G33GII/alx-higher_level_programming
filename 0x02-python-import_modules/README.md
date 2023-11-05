@@ -44,6 +44,11 @@ sys.stdout.write("#pythoniscool\n")
 arguments = sys.argv
 for i, arg in enumerate(arguments):
     print(f"Argument {i}: {arg}")
+***************************************
+
+av = __import__("sys").argv
+print(av)
+
 
 """
 =============================================
