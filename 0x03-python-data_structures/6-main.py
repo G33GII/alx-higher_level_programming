@@ -6,11 +6,11 @@ matrix = [
     [4, 5, 6],
     [7, 8, 9]
 ]
-print(type(matrix))
 
 print_matrix_integer(matrix)
 print("--")
 print_matrix_integer()
+
 """Prototype: def print_matrix_integer(matrix=[[]]):
 Format: see example
 You are not allowed to import any module
