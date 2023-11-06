@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 
 def no_c(my_string):
     """Function that  that removes all characters c and C from a string"""
