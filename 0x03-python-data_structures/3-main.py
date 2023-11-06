@@ -2,7 +2,7 @@
 
 print_reversed_list_integer = __import__('3-print_reversed_list_integer').print_reversed_list_integer
 
-my_list = [1, 2, 3, 4, 5]
+my_list = [1, 2, 3, 4, 5, 9, 8, 5, 7, 8]
 print_reversed_list_integer(my_list)
 
 """Prototype: def print_reversed_list_integer(my_list=[]):
