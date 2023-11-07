@@ -41,3 +41,8 @@ int main(void)
  * Return: 0 if it is not a palindrome, 1 if it is a palindrome
  * An empty list is considered a palindrome
 */
+/**
+ * int *lst_arr(int *_x, int *_arr, listint_t *head);
+ * void _comprm(int *_arr, int *x, int *z);
+ * int _len(listint_t *_shft);
+ */
