@@ -5,72 +5,72 @@
  * @head: pointer to the starting of the list
  * Return: 0 if it is not a palindrome, 1 if it is a palindrome
  */
+int is_palindrome(listint_t **head);
 int is_palindrome(listint_t **head)
 {
-	int x = 0, z = 0;
-	int *_arr = NULL;
+	listint_t *reversed_second_half = NULL;
+	listint_t *second_half = NULL;
+	listint_t *next_node = NULL;
+	listint_t *slow_ptr = *head;
+	listint_t *fast_ptr = *head;
+	listint_t *prev = NULL;
+	listint_t *mid = NULL;
+	int is_palindrome = 1;
 
 	if (*head == NULL || (*head)->next == NULL)
-		return (1);
+		return (is_palindrome);
 
-	x = _len(*head);
-	_arr = lst_arr(&x, _arr, *head);
-	_comprm(_arr, &x, &z);
-
-	if (_arr[x] != _arr[z])
+	/* Find the middle of the list */
+	while (fast_ptr != NULL && fast_ptr->next != NULL)
 	{
-		free(_arr);
-		return (0);
+		fast_ptr = fast_ptr->next->next;
+		prev = slow_ptr;
+		slow_ptr = slow_ptr->next;
 	}
-	free(_arr);
-	return (1);
-}
+	/*Handle odd-length lists: Move slow_ptr to the next node (the true middle)*/
+	if (fast_ptr != NULL)
+	{
+		mid = slow_ptr;
+		slow_ptr = slow_ptr->next;
+	}
+	/* Reverse the second half of the list */
+	second_half = slow_ptr;
+	reversed_second_half = NULL;
+	while (second_half != NULL)
+	{
+		next_node = second_half->next;
+		second_half->next = reversed_second_half;
+		reversed_second_half = second_half;
+		second_half = next_node;
+	}
+	/* Compare the first half and the reversed second half of the list */
+	listint_t *first_half = *head;
 
-/**
- * _len - Length of the list
- * @_shft: pointer to list
- * Return: integer of length
- */
-int _len(listint_t *_shft)
-{
-	int x = 0;
+	while (reversed_second_half != NULL)
+	{
+		if (first_half->n != reversed_second_half->n)
+		{
+			is_palindrome = 0;
+			break;
+		}
+		first_half = first_half->next;
+		reversed_second_half = reversed_second_half->next;
+	}
+	/* Restore the original list by reversing the reversed_second_half */
+	second_half = NULL;
 
-	for (x = 0; _shft; _shft = _shft->next)
-		x++;
-	return (x);
-}
+	while (reversed_second_half != NULL)
+	{
+		next_node = reversed_second_half->next;
+		reversed_second_half->next = second_half;
+		second_half = reversed_second_half;
+		reversed_second_half = next_node;
+	}
+	/* Reconnect the second half to the middle (for odd-length lists) */
+	if (mid != NULL)
+		mid->next = second_half;
+	else
+		prev->next = second_half;
 
-/**
- * lst_arr - copies from the list to array on the heap
- * @head: pointer to list
- * @_x: length of the list
- * @_arr: array pointer pointing to NULL
- * Return: pointer to the array
- */
-
-int *lst_arr(int *_x, int *_arr, listint_t *head)
-{
-	listint_t *_shft = head;
-	int x = 0;
-
-	_arr = malloc(sizeof(int) * (*_x));
-	(*_x)--;
-
-	for (; _shft; _shft = _shft->next, x++)
-		_arr[x] = _shft->n;
-
-	return (_arr);
-}
-
-/**
- * _comprm - The comparison of the array
- * @_arr: pointer to list to be freed
- * @x: integer ptr
- * @z: integer ptr
- * Return: void
- */
-void _comprm(int *_arr, int *x, int *z)
-{
-	for (; *z < *x && _arr[(*z)] == _arr[(*x)]; (*z)++, (*x)--)
-		continue;
+	return (is_palindrome);
 }
