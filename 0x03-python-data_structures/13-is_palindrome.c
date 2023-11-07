@@ -16,7 +16,6 @@ int is_palindrome(listint_t **head)
 	x = _len(*head);
 	_arr = lst_arr(&x, _arr, *head);
 
-	// for (z = 0; _arr[x] && _arr[z] && (&_arr[x] != &_arr[z]); x--, z++)
 	for (z = 0; z < x && _arr[z] == _arr[x]; z++, x--)
 		continue;
 
