@@ -22,6 +22,7 @@ typedef struct listint_s
 listint_t *add_nodeint_end(listint_t **head, const int n);
 int *lst_arr(int *_x, int *_arr, listint_t *head);
 size_t print_listint(const listint_t *h);
+void _comprm(int *_arr, int *x, int *z);
 int is_palindrome(listint_t **head);
 void free_listint(listint_t *head);
 int _len(listint_t *_shft);

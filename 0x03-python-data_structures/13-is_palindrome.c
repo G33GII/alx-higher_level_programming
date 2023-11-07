@@ -15,9 +15,10 @@ int is_palindrome(listint_t **head)
 
 	x = _len(*head);
 	_arr = lst_arr(&x, _arr, *head);
+	_comprm(_arr, &x, &z);
 
-	for (z = 0; z < x && _arr[z] == _arr[x]; z++, x--)
-		continue;
+	/*for (z = 0; z < x && _arr[z] == _arr[x]; z++, x--)
+		continue;*/
 
 	if (_arr[x] != _arr[z])
 	{
@@ -62,4 +63,17 @@ int *lst_arr(int *_x, int *_arr, listint_t *head)
 		_arr[x] = _shft->n;
 
 	return (_arr);
+}
+
+/**
+ * _comprm - The comparison of the array
+ * @_arr: pointer to list to be freed
+ * @x: integer ptr
+ * @z: integer ptr
+ * Return: void
+ */
+void _comprm(int *_arr, int *x, int *z)
+{
+    for (; *z < *x && _arr[(*z)] == _arr[(*x)]; (*z)++, (*x)--)
+		continue;
 }
