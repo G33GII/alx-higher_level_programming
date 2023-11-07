@@ -16,21 +16,18 @@ int is_palindrome(listint_t **head)
 	x = _len(*head);
 	_arr = lst_arr(&x, _arr, *head);
 
-	for (z = 0; _arr[x] && _arr[z] && (&_arr[x] != &_arr[z]); x--, z++)
+	// for (z = 0; _arr[x] && _arr[z] && (&_arr[x] != &_arr[z]); x--, z++)
+	for (z = 0; z < x && _arr[z] == _arr[x]; z++, x--)
+		continue;
+
+	if (_arr[x] != _arr[z])
 	{
-		if (_arr[x] == _arr[z])
-			continue;
-		else
-		{
-			free(_arr);
-			return (0);
-		}
+		free(_arr);
+		return (0);
 	}
 	free(_arr);
 	return (1);
 }
-
-
 
 /**
  * _len - Length of the list
@@ -45,7 +42,6 @@ int _len(listint_t *_shft)
 		x++;
 	return (x);
 }
-
 
 /**
  * lst_arr - copies from the list to array on the heap
@@ -68,4 +64,3 @@ int *lst_arr(int *_x, int *_arr, listint_t *head)
 
 	return (_arr);
 }
-
