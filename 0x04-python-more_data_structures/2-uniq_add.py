@@ -13,4 +13,4 @@ def uniq_add(my_list=[]):
     for itm in unique_set:
         total += itm
 
-    return total
+    return total        # return sum(set(my_list))
