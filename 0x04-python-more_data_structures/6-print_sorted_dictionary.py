@@ -5,7 +5,7 @@ def print_sorted_dictionary(a_dictionary):
 
 
     Args:
-        a_dictionary (_type_): _description_
+        a_dictionary (_type_): Dictionary values can have any type
     """
     _srt = sorted(a_dictionary.keys())
     for k in _srt:
