@@ -7,6 +7,6 @@ def common_elements(set_1, set_2):
         set_1 (_type_): _description_
         set_2 (_type_): _description_
     """
-    _set = set_1 & set_2
+    # return set_1.intersection(set_2)
 
-    return _set
+    return set_1 & set_2
