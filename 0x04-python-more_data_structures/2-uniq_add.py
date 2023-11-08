@@ -1,6 +1,6 @@
 def uniq_add(my_list=[]):
     """
-    Function that adds all unique integers in a list (only once for each integer).
+    Function: adds all unique integers in a list (only once for each integer).
 
     Args:
         my_list (list, optional): The input list. Defaults to [].
