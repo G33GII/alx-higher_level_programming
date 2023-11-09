@@ -21,7 +21,7 @@ def roman_to_int(roman_string):
     roman_n = 0
 
     prev_value = 0
-    for c in roman_string[::-1]:  # Reverse the string for easy subtraction logic
+    for c in roman_string[::-1]:  # Reverse string for easy subtraction logic
         value = roman_d.get(c, 0)
 
         if value >= prev_value:
