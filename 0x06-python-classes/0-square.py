@@ -1,5 +1,8 @@
 #!/usr/bin/python3
+"""Class Square"""
+
 
 class Square:
-    """Initialize a square with a specific side length."""
+    """Class: Defines squares.
+    """
     pass
