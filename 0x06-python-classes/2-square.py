@@ -8,7 +8,7 @@ class Square:
                 Defaults to 0 if not specified.
     """
     def __init__(self, size=0):
-           """Initialize a square with an optional size.
+        """Initialize a square with an optional size.
 
         Args:
             size (int): Size of the square (private instance attribute).
