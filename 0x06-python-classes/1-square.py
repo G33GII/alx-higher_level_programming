@@ -11,4 +11,3 @@ class Square:
             size: Size of the square (private instance attribute).
         """
         self.__size = size
-
