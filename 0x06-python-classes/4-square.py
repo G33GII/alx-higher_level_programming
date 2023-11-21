@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+""" Defines a CLASS """
+
+
 class Square:
     """
     Class that defines properties of a square (based on 3-square.py).
