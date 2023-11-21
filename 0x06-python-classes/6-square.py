@@ -8,7 +8,8 @@ class Square:
 
     Attributes:
         size: The length of one side of the square.
-        position: A tuple representing the coordinates of the square's position.
+        position: A tuple representing
+        the coordinates of the square's position.
     """
 
     def __init__(self, size=0, position=(0, 0)):
@@ -17,7 +18,8 @@ class Square:
 
         Args:
             size: The size of the square's side. Defaults to 0.
-            position: A tuple indicating the position of the square. Defaults to (0, 0).
+            position: A tuple indicating the position of the square.
+            Defaults to (0, 0).
         """
         self.size = size
         self.position = position
@@ -78,7 +80,8 @@ class Square:
             value: A tuple representing the new position of the square.
 
         Raises:
-            TypeError: If the provided position is not a tuple of two positive integers.
+            TypeError: If the provided position is not a
+            tuple of two positive integers.
         """
         if not isinstance(value, tuple):
             raise TypeError("position must be a tuple of 2 positive integers")
@@ -94,7 +97,8 @@ class Square:
         """
         Prints the square using the '#' character.
 
-        Prints empty lines for the vertical position and spaces for the horizontal position.
+        Prints empty lines for the vertical position
+        and spaces for the horizontal position.
         If the size of the square is 0, it prints an empty line.
         """
         if self.__size == 0:
