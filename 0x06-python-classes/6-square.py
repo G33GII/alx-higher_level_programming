@@ -12,6 +12,7 @@ class Square:
         the coordinates of the square's position.
     """
 
+
     def __init__(self, size=0, position=(0, 0)):
         """
         Initializes a new instance of the Square class.
@@ -24,14 +25,6 @@ class Square:
         self.size = size
         self.position = position
 
-    def area(self):
-        """
-        Calculates and returns the area of the square.
-
-        Returns:
-            The area of the square.
-        """
-        return self.__size ** 2
 
     @property
     def size(self):
@@ -42,6 +35,7 @@ class Square:
             The size of the square's side.
         """
         return self.__size
+
 
     @size.setter
     def size(self, value):
@@ -61,6 +55,7 @@ class Square:
             raise ValueError("size must be >= 0")
         self.__size = value
 
+
     @property
     def position(self):
         """
@@ -70,6 +65,7 @@ class Square:
             A tuple representing the position of the square.
         """
         return self.__position
+
 
     @position.setter
     def position(self, value):
@@ -92,6 +88,17 @@ class Square:
         if value[0] < 0 or value[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
+
+
+    def area(self):
+        """
+        Calculates and returns the area of the square.
+
+        Returns:
+            The area of the square.
+        """
+        return self.__size ** 2
+
 
     def my_print(self):
         """
