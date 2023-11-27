@@ -82,13 +82,14 @@ class Rectangle:
             return 0
         return 2 * (_w + _h)
 
+    def __str__(self):
+        """Return a string representation of the rectangle."""
 
-def __str__(self):
-    """Return a string representation of the rectangle."""
-    rect = []
-    for i in range(self.__height):
-        [rect.append('#') for j in range(self.__width)]
-        if i != self.__height - 1:
-            rect.append("\n")
-    return ("".join(rect))
+        _r = ""
+        _w = self.__width
+        _h = self.__height
 
+        for i in range(_h):
+            _r += "#" * _w + "\n" if i is not _h - 1 else "#" * _w
+
+        return (_r)
