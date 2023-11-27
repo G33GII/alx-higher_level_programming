@@ -88,6 +88,8 @@ class Rectangle:
         _r = ""
         _w = self.__width
         _h = self.__height
+        if _w == 0 or _h == 0:
+            return _r
 
         for i in range(_h):
             _r += "#" * _w + "\n" if i is not _h - 1 else "#" * _w
