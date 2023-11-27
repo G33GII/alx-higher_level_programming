@@ -81,3 +81,14 @@ class Rectangle:
         if _w == 0 or _h == 0:
             return 0
         return 2 * (_w + _h)
+
+
+def __str__(self):
+    """Return a string representation of the rectangle."""
+    rect = []
+    for i in range(self.__height):
+        [rect.append('#') for j in range(self.__width)]
+        if i != self.__height - 1:
+            rect.append("\n")
+    return ("".join(rect))
+
