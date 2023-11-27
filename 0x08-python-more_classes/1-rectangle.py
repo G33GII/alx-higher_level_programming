@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Rectangle Class"""
 
+
 class Rectangle:
     """A class representing a rectangle."""
 
@@ -34,7 +35,7 @@ class Rectangle:
             ValueError: If value is less than 0.
         """
 
-        if type(value) != int:
+        if type(value) is not int:
             raise TypeError("Width must be an integer")
 
         if value < 0:
@@ -60,7 +61,7 @@ class Rectangle:
             ValueError: If value is less than 0.
         """
 
-        if type(value) != int:
+        if type(value) is not int:
             raise TypeError("Height must be an integer")
 
         if value < 0:
