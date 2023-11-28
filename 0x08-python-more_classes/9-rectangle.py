@@ -21,8 +21,8 @@ class Rectangle:
             height (int): The height of the rectangle. Defaults to 0.
         """
 
-        self.__height = height
-        self.__width = width
+        self.height = height
+        self.width = width
         Rectangle.number_of_instances += 1  # OR type(self).number_of_instances
 
     @property
@@ -45,10 +45,8 @@ class Rectangle:
 
         if not isinstance(value, int):
             raise TypeError("Width must be an integer")
-
         if value < 0:
             raise ValueError("Width must be >= 0")
-
         self.__width = value
 
     @property
@@ -71,7 +69,6 @@ class Rectangle:
 
         if not isinstance(value, int):
             raise TypeError("Height must be an integer")
-
         if value < 0:
             raise ValueError("Height must be >= 0")
         self.__height = value
