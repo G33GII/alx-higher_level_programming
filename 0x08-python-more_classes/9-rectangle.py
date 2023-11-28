@@ -99,18 +99,11 @@ class Rectangle:
 
         Args:
             cls (class): The class (Rectangle or its subclasses).
-            size (int, optional): The size of the square. Defaults to 0.
+            size (int): The size of the square. Defaults to 0.
 
         Returns:
             Rectangle: A square instance of the
                     Rectangle class with equal width and height.
-
-        Raises:
-            None.
-
-        Example:
-            square_instance = Rectangle.square(5)
-            # Creates a square with sides of length 5
         """
         return cls(size, size)
 
