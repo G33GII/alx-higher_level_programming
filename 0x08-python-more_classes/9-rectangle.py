@@ -95,14 +95,12 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
-        """Creates a square instance of the Rectangle class.
-        Returns A square instance of the
-                    Rectangle class with equal width and height.
+        """Return a new Rectangle with width and height equal to size.
 
         Args:
-            size (int): The size of the square. Defaults to 0.
+            size (int): The width and height of the new Rectangle.
         """
-        return cls(size, size)
+        return (cls(size, size))
 
     def area(self):
         """Calculate the area of the rectangle."""
