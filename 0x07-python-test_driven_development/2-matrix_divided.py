@@ -16,7 +16,6 @@ def matrix_divided(matrix, div):
     Returns:
         Returns a new matrix.
     """
-    _n = []
     _l = len(matrix[0])
 
     if any(not isinstance(z, (int, float)) for x in matrix for z in x):
@@ -28,9 +27,11 @@ def matrix_divided(matrix, div):
     if div == 0:
         raise ZeroDivisionError("division by zero")
 
-    _n = [z for x in matrix for z in x]
-    _n = [_n[:] for x in ]
+    # Applying division and rounding using nested list comprehension
+    _nw = [[round(z / div, 2) for z in x] for x in matrix]
 
-    return _n
+    return _nw
 
-
+if __name__ == "__main__":
+    import doctest
+    doctest.testfile("tests/2-matrix_divided.txt")
