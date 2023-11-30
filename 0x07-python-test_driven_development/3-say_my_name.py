@@ -1,4 +1,4 @@
-#!/bin/usr/python
+#!/usr/bin/python3
 """ function that prints My name is <first name> <last name>"""
 
 
