@@ -4,11 +4,12 @@ list of available attributes and methods of an object"""
 
 
 def lookup(obj):
-    """function that returns
-    the list of available attributes and methods of an object
+    """function that returns the list of available attributes and methods of an object
+
     Args:
-        obj(int): Object to be examined.
-    Return:
-        Returns a list object
+        obj: Object to be examined.
+
+    Returns:
+        list: List of available attributes and methods of the object.
     """
-    return print(dir(obj))
+    return dir(obj)
