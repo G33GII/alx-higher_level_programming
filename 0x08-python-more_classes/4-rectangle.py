@@ -66,7 +66,6 @@ class Rectangle:
 
         if value < 0:
             raise ValueError("Height must be >= 0")
-
         self.__height = value
 
     def area(self):
@@ -84,7 +83,6 @@ class Rectangle:
 
     def __str__(self):
         """Return a string representation of the rectangle."""
-
         _r = ""
         _w = self.__width
         _h = self.__height
@@ -93,5 +91,10 @@ class Rectangle:
 
         for i in range(_h):
             _r += "#" * _w + "\n" if i is not _h - 1 else "#" * _w
+        return _r
 
-        return (_r)
+    def __repr__(self):
+        """Return a string representation of the rectangle."""
+        _w = self.__width
+        _h = self.__height
+        return f"Rectangle({_w}, {_h})"
