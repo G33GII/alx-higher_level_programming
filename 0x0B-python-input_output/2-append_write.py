@@ -1,4 +1,4 @@
-#!/bin/usr/python3
+#!/usr/bin/python3
 """function: that appends str at the end of a txt (UTF8)
                         & returns NUM of chars added"""
 
