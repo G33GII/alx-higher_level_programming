@@ -1,5 +1,7 @@
 #!/usr/bin/python
 """class: Student that defines a student"""
+
+
 class Student:
     """A class representing a student."""
 
