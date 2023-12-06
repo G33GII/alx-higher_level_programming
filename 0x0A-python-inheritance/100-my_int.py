@@ -1,15 +1,21 @@
+#!/usr/bin/python3
+"""Class
+"""
+
+
 class MyInt(int):
     """
     A class that inherits from 'int' and alters comparison methods.
-    
-    This class modifies the behavior of the equality (__eq__) and inequality (__ne__)
+
+    This class modifies the behavior of the equality
+    (__eq__) and inequality (__ne__)
     comparison methods to swap their functionality.
     """
 
     def __eq__(self, other):
         """
         Override the equality (==) comparison method.
-        
+
         Args:
             other: Another object to compare against.
 
@@ -21,7 +27,7 @@ class MyInt(int):
     def __ne__(self, other):
         """
         Override the inequality (!=) comparison method.
-        
+
         Args:
             other: Another object to compare against.
 
