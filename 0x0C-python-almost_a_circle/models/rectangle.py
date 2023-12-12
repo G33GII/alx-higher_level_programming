@@ -17,10 +17,10 @@ class Rectangle(Base):
             id (int, optional): id. Defaults to None.
         """
 
-        self.__height = height
-        self.__width = width
-        self.__x = x
-        self.__y = y
+        self.height = height
+        self.width = width
+        self.x = x
+        self.y = y
         super().__init__(id)
 
     def area(self):
@@ -69,6 +69,10 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         """Height: Setter."""
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
+        if value <= 0:
+            raise ValueError("height must be > 0")
         self.__height = value
 
     @property
@@ -79,6 +83,10 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """Width: Setter."""
+        if not isinstance(value, int):
+            raise TypeError("width must be an integer")
+        if value <= 0:
+            raise ValueError("width must be > 0")
         self.__width = value
 
     @property
@@ -89,6 +97,10 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """X: Setter."""
+        if not isinstance(value, int):
+            raise TypeError("x must be an integer")
+        if value < 0:
+            raise ValueError("x must be >= 0")
         self.__x = value
 
     @property
@@ -99,4 +111,20 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """X: Setter."""
+        if not isinstance(value, int):
+            raise TypeError("y must be an integer")
+        if value < 0:
+            raise ValueError("y must be >= 0")
         self.__y = value
+
+    @property
+    def id(self):
+        """Getter method for id."""
+        return self.__id
+
+    @id.setter
+    def id(self, value):
+        """Setter method for id."""
+        if value < 0:
+            raise ValueError("id must be > 0")
+        self.__id = value
