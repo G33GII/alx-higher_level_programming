@@ -23,12 +23,10 @@ class Rectangle(Base):
         self.__y = y
         super().__init__(id)
 
-    """*******************************************"""
     def area(self):
         """funtion for area"""
         return self.__width * self.__height
 
-    """*******************************************"""
     def display(self):
         """prints in stdout the Rectangle
         instance with the character #"""
@@ -38,7 +36,6 @@ class Rectangle(Base):
             print(" " * self.x, end='')
             print('#' * self.__width)
 
-    """*******************************************"""
     def update(self, *args, **kwargs):
         """function that assigns an argument to each attribute
         OR that changes the value of an attribute of an instance"""
@@ -53,7 +50,6 @@ class Rectangle(Base):
             for key, value in kwargs.items():
                 setattr(self, key, value)
 
-    """*******************************************"""
     def __str__(self):
         """__str__: print(obj)"""
         return (
@@ -61,7 +57,6 @@ class Rectangle(Base):
             .format(self.id, self.x, self.y, self.width, self.height)
             )
 
-    """*******************************************"""
     @property
     def height(self):
         """Height: Getter."""
