@@ -19,19 +19,9 @@ class Square(Rectangle):
         super().__init__(size, size, x, y, id)
         self.size = size
 
-    @property
-    def size(self):
-        return self.__size
-
-    @size.setter
-    def size(self, value):
-        if value != self.width or value != self.height:
-            raise ValueError("Size must be equal to both width and height")
-        self._size = value
-
     def __str__(self):
         """__str__: print(obj)"""
         return (
             "[Square] ({}) {}/{} - {}"
-            .format(self.id, self.x, self.y, self.height)
+            .format(self.id, self.x, self.y, self.width)
             )
