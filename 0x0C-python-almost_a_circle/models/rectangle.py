@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ A Class: class Rectangle that inherits from Base."""
-from base import Base
+from models.base import Base
 
 
 class Rectangle(Base):
@@ -38,9 +38,13 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """function that assigns an argument to each attribute
-        OR that changes the value of an attribute of an instance"""
+        OR that changes the value of an attribute of an instance
 
-        # setting all attr acordingly in a list for args
+        Args:
+            args: variable number of args
+            kwargs: Variable num of args in a k:v format (dict)
+        """
+
         att = ["id", "width", "height", "x", "y"]
 
         for x in range(len(args)):
