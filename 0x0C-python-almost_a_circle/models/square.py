@@ -43,6 +43,11 @@ class Square(Rectangle):
             if k in att:
                 setattr(self, k, v)
 
+    def to_dictionary(self):
+        """Update the class Square by adding the public method
+        that returns the dictionary representation of a Square"""
+        return {'id': self.id, 'x': self.x, 'size': self.width, 'y': self.y}
+
     def __str__(self):
         """__str__: print(obj)"""
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
