@@ -30,7 +30,8 @@ class Square(Rectangle):
         """Update the class Square by adding the public method
         Args:
             args: *args is the list of arguments - no-keyworded arguments
-            kwargs: can be thought of as a double pointer to a dictionary: key/value (keyworded arguments)
+            kwargs: can be thought of as a double pointer to a dictionary:
+                        key/value (keyworded arguments)
         """
         att = ["id", "size", "x", "y"]
 
