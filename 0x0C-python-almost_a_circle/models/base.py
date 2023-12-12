@@ -14,8 +14,10 @@ class Base(object):
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """Base Class:
-                Constructor
+        """Base Class: Constructor.
+
+        Args:
+            id (int, None): _description_. Defaults to None.
         """
 
         if id is not None:
