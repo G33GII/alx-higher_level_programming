@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-""" A Class:
-        class Rectangle that inherits from Base.
-"""
+""" A Class: class Rectangle that inherits from Base."""
 from base import Base
 
 
@@ -57,6 +55,7 @@ class Rectangle(Base):
 
     """*******************************************"""
     def __str__(self):
+        """__str__: print(obj)"""
         return (
             "[Rectangle] ({}) {}/{} - {}/{}"
             .format(self.id, self.x, self.y, self.width, self.height)
