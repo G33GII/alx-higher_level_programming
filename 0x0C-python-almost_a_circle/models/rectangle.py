@@ -94,16 +94,16 @@ class Rectangle(Base):
     """_____________________________________________________"""
     def area(self):
         """funtion for area"""
-        return self.__width * self.__height
+        return self.width * self.height
 
     def display(self):
         """prints in stdout the Rectangle
         instance with the character #"""
         [print() for _ in range(self.y)]
 
-        for a in range(self.__height):
+        for a in range(self.height):
             print(" " * self.x, end='')
-            print('#' * self.__width)
+            print('#' * self.width)
 
     def update(self, *args, **kwargs):
         """function that assigns an argument to each attribute
