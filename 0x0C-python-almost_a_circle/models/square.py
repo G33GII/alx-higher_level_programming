@@ -26,6 +26,22 @@ class Square(Rectangle):
         self.width = value
         self.height = value
 
+    def update(self, *args, **kwargs):
+        """Update the class Square by adding the public method
+        Args:
+            args: *args is the list of arguments - no-keyworded arguments
+            kwargs: can be thought of as a double pointer to a dictionary: key/value (keyworded arguments)
+        """
+        att = ["id", "size", "x", "y"]
+
+        for x, v in enumerate(args):
+            if x < len(att):
+                setattr(self, att[x], v)
+
+        for k, v in kwargs.items():
+            if k in att:
+                setattr(self, k, v)
+
     def __str__(self):
         """__str__: print(obj)"""
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
