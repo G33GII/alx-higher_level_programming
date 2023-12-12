@@ -22,5 +22,5 @@ class Square(Rectangle):
         """__str__: print(obj)"""
         return (
             "[Square] ({}) {}/{} - {}"
-            .format(self.id, self.x, self.y, self.width)
+            .format(self.id, self.x, self.y, self.height)
             )
