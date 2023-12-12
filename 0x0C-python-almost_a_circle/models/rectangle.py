@@ -23,44 +23,6 @@ class Rectangle(Base):
         self.y = y
         super().__init__(id)
 
-    def area(self):
-        """funtion for area"""
-        return self.__width * self.__height
-
-    def display(self):
-        """prints in stdout the Rectangle
-        instance with the character #"""
-        [print() for _ in range(self.y)]
-
-        for a in range(self.__height):
-            print(" " * self.x, end='')
-            print('#' * self.__width)
-
-    def update(self, *args, **kwargs):
-        """function that assigns an argument to each attribute
-        OR that changes the value of an attribute of an instance
-
-        Args:
-            args: variable number of args
-            kwargs: Variable num of args in a k:v format (dict)
-        """
-
-        att = ["id", "width", "height", "x", "y"]
-
-        for x in range(len(args)):
-            if x < len(att):
-                setattr(self, att[x], args[x])
-        if kwargs is not None or args is None:
-            for key, value in kwargs.items():
-                setattr(self, key, value)
-
-    def __str__(self):
-        """__str__: print(obj)"""
-        return (
-            "[Rectangle] ({}) {}/{} - {}/{}"
-            .format(self.id, self.x, self.y, self.width, self.height)
-            )
-
     @property
     def height(self):
         """Height: Getter."""
@@ -128,3 +90,43 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("id must be > 0")
         self.__id = value
+
+    """_____________________________________________________"""
+    def area(self):
+        """funtion for area"""
+        return self.__width * self.__height
+
+    def display(self):
+        """prints in stdout the Rectangle
+        instance with the character #"""
+        [print() for _ in range(self.y)]
+
+        for a in range(self.__height):
+            print(" " * self.x, end='')
+            print('#' * self.__width)
+
+    def update(self, *args, **kwargs):
+        """function that assigns an argument to each attribute
+        OR that changes the value of an attribute of an instance
+
+        Args:
+            args: variable number of args
+            kwargs: Variable num of args in a k:v format (dict)
+        """
+
+        att = ["id", "width", "height", "x", "y"]
+
+        for x in range(len(args)):
+            if x < len(att):
+                setattr(self, att[x], args[x])
+        if kwargs is not None or args is None:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+
+    def __str__(self):
+        """__str__: print(obj)"""
+        return (
+            "[Rectangle] ({}) {}/{} - {}/{}"
+            .format(self.id, self.x, self.y, self.width, self.height)
+            )
+
