@@ -48,11 +48,14 @@ class Base(object):
             else:
                 f.write("[]")
 
-        """ OR
-        _fn = list_objs[0].__class__.__name__ + ".json"
-        for x in list_objs:
-        _dict = x.to_dictionary()
-        _js = cls.to_json_string(_dict)
-        _dict = json.loads(_js)
-        _l.append(_dict)
+    @staticmethod
+    def from_json_string(json_string):
+        """ returns the list of the JSON string representation json_string
+
+        Args:
+            json_string(): is a string representing a list of dictionaries
         """
+        if json_string is None:
+            return []
+        else:
+            return json.loads(json_string)
