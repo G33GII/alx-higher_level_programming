@@ -65,7 +65,8 @@ class Base(object):
         """Returns an instance with all attributes already set
 
         Args:
-            dictionary(dict): can be thought of as a double pointer to a dictionary
+            dictionary(dict): can be thought of as a
+                            double pointer to a dictionary
         """
         _obj = cls(1, 2)
         _obj.update(**dictionary)
