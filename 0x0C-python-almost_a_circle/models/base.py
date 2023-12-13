@@ -53,9 +53,20 @@ class Base(object):
         """ returns the list of the JSON string representation json_string
 
         Args:
-            json_string(): is a string representing a list of dictionaries
+            json_string(dict): is a string representing a list of dictionaries
         """
         if json_string is None:
             return []
         else:
             return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """Returns an instance with all attributes already set
+
+        Args:
+            dictionary(dict): can be thought of as a double pointer to a dictionary
+        """
+        _obj = cls(1, 2)
+        _obj.update(**dictionary)
+        return _obj
