@@ -47,5 +47,7 @@ class Base(object):
                 _dict = json.loads(_js)
                 _l.append(_dict)
             _fn = list_objs[0].__class__.__name__ + ".json"
+        else:
+            _fn = "Rectangle.json"
         with open(_fn, "w", encoding="utf-8") as f:
             f.write(str(_l))
