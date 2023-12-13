@@ -39,17 +39,20 @@ class Base(object):
     def save_to_file(cls, list_objs):
         """ writes the JSON string representation of list_objs to a file """
         _l = []
-        _fn = ""
-        
-        if list_objs is not None:
-            for x in list_objs:
-                _dict = x.to_dictionary()
-                _js = cls.to_json_string(_dict)
-                _dict = json.loads(_js)
-                _l.append(_dict)
-            # _fn = list_objs[0].__class__.__name__ + ".json" OR
-            _fn = cls.__name__ + ".json"
-        else:
-            _fn = "Rectangle.json"
+        _fn = cls.__name__ + ".json"
+
         with open(_fn, "w", encoding="utf-8") as f:
-            f.write(str(_l))
+            if list_objs is not None:
+                _l = [x.to_dictionary() for x in list_objs]
+                f.write(cls.to_json_string(_l))
+            else:
+                f.write("[]")
+
+        """ OR
+        _fn = list_objs[0].__class__.__name__ + ".json"
+        for x in list_objs:
+        _dict = x.to_dictionary()
+        _js = cls.to_json_string(_dict)
+        _dict = json.loads(_js)
+        _l.append(_dict)
+        """
