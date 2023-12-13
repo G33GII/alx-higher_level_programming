@@ -40,13 +40,15 @@ class Base(object):
         """ writes the JSON string representation of list_objs to a file """
         _l = []
         _fn = ""
+        
         if list_objs is not None:
             for x in list_objs:
                 _dict = x.to_dictionary()
                 _js = cls.to_json_string(_dict)
                 _dict = json.loads(_js)
                 _l.append(_dict)
-            _fn = list_objs[0].__class__.__name__ + ".json"
+            # _fn = list_objs[0].__class__.__name__ + ".json" OR
+            _fn = cls.__name__ + ".json"
         else:
             _fn = "Rectangle.json"
         with open(_fn, "w", encoding="utf-8") as f:
