@@ -68,6 +68,6 @@ class Base(object):
             dictionary(dict): can be thought of as a
                             double pointer to a dictionary
         """
-        _obj = cls(1, 2)
+        _obj = cls(1, 2) if cls.__name__ == 'Rectangle' else cls(1)
         _obj.update(**dictionary)
         return _obj
