@@ -79,7 +79,7 @@ class Base(object):
         try:
             with open(_fn, "r", encoding="utf-8") as f:
                 _d = cls.from_json_string(f.read())
-                _NI =  [cls.create(**x) for x in _d]
+                _NI = [cls.create(**x) for x in _d]
                 return (_NI)
         except FileNotFoundError:
             return ""
