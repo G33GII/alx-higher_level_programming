@@ -7,8 +7,7 @@ if __name__ == "__main__":
     s1 = Square(5)
     print(s1)
     print(s1.size)
-    s1.size = 10
-    print(s1)
+ 
 
     try:
         s1.size = "9"
