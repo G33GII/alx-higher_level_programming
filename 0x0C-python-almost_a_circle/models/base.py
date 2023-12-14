@@ -71,3 +71,15 @@ class Base(object):
         _obj = cls(1, 2) if cls.__name__ == 'Rectangle' else cls(1)
         _obj.update(**dictionary)
         return _obj
+
+    @classmethod
+    def load_from_file(cls):
+        """Returns a list of instances"""
+        _fn = cls.__name__ + ".json"
+        try:
+            with open(_fn, "r", encoding="utf-8") as f:
+                _d = cls.from_json_string(f.read())
+                _NI =  [cls.create(**x) for x in _d]
+                return (_NI)
+        except FileNotFoundError:
+            return ""
