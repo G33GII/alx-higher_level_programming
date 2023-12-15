@@ -11,7 +11,6 @@ class Base(object):
             and to avoid duplicating the same code
             (by extension, same bugs)
     """
-
     __nb_objects = 0
 
     def __init__(self, id=None):
@@ -20,7 +19,6 @@ class Base(object):
         Args:
             id (int, None): _description_. Defaults to None.
         """
-
         if id is not None:
             self.id = id
         else:
@@ -30,7 +28,8 @@ class Base(object):
     @staticmethod
     def to_json_string(list_dictionaries):
         """to_json_string: returns the JSON
-        string representation of list_dictionaries"""
+        string representation of list_dictionaries
+        """
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
         return json.dumps(list_dictionaries)
