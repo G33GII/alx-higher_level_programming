@@ -3,6 +3,7 @@
         This class will be the “base” of all other classes in this project.
 """
 import json
+import csv
 
 
 class Base(object):
@@ -82,3 +83,35 @@ class Base(object):
                 return (_NI)
         except FileNotFoundError:
             return ""
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """serializes and deserializes in CSV"""
+        _fn = cls.__name__ + ".csv"
+        _dict = [x.to_dictionary() for x in list_objs]
+
+        if _fn == "Rectangle.csv":
+            field_name = ['id', 'width', 'height', 'x', 'y']
+        elif _fn == "Square.csv":
+            field_name = ['id', 'size', 'x', 'y']
+        else:
+            field_name = ['id']
+
+        with open(_fn, "w", newline="") as f:
+            _w = csv.DictWriter(f, fieldnames=field_name)  # DW - DictWriter
+            _w.writeheader()
+            [_w.writerow(_r) for _r in _dict]
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Serializes and deserializes in CSV."""
+
+        filename = cls.__name__ + ".csv"
+
+        with open(filename, "r") as f:
+
+            list_dicts = csv.DictReader(f)
+            __list_dicts = [dict([k, int(v)] for k, v in z.items())
+                            for z in list_dicts]
+
+            return [cls.create(**x) for x in __list_dicts]
