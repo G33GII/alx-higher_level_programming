@@ -10,5 +10,5 @@ const secondInteger = parseInt(process.argv[3]);
 if (!isNaN(firstInteger) && !isNaN(secondInteger)) {
   console.log(add(firstInteger, secondInteger));
 } else {
-  console.log('Please provide two valid integers');
+  console.log('NaN');
 }
