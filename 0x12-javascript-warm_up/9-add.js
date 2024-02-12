@@ -1,15 +1,14 @@
-
-#!/usr/bin / node
+!/usr/bin / node
 
 function add(a, b) {
-    return a + b;
+  return a + b;
 }
 
 const firstInteger = parseInt(process.argv[2]);
 const secondInteger = parseInt(process.argv[3]);
 
 if (!isNaN(firstInteger) && !isNaN(secondInteger)) {
-    console.log(add(firstInteger, secondInteger));
+  console.log(add(firstInteger, secondInteger));
 } else {
-    console.log("Please provide two valid integers");
+  console.log("Please provide two valid integers");
 }
