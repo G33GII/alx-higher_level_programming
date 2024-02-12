@@ -7,7 +7,7 @@ if (args.length === 0 || args.length === 1) {
 } else {
   args.sort((a, b) => b - a);
 
-  let secondLargest = args[1];
+  const secondLargest = args[1];
 
   console.log(secondLargest);
 }
