@@ -1,15 +1,12 @@
 #!/usr/bin/node
 
-const args = process.argv.slice(2).map(Number);
+const myObject = {
+  type: 'object',
+  value: 12
+};
 
-if (args.length === 0 || args.length === 1) {
-  console.log(0);
-} else {
-  const replacedArgs = args.map(num => num === 12 ? 89 : num);
+console.log(myObject);
 
-  replacedArgs.sort((a, b) => b - a);
+myObject.value = 89;
 
-  const secondLargest = replacedArgs[1];
-
-  console.log(secondLargest);
-}
+console.log(myObject);
