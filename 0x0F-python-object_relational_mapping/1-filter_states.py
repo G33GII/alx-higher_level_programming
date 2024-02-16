@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Pythone SQL code"""
+"""Python_ SQL code"""
 
 import sys
 import MySQLdb
