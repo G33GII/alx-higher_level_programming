@@ -18,7 +18,8 @@ def list_states_starting_with_n(username, password, database):
         cursor = connection.cursor()
 
         # Execute query to retrieve states starting with 'N'
-        cursor.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY states.id")
+        cursor.execute("SELECT * FROM states "
+                       "WHERE name LIKE 'N%' ORDER BY id ASC")
         states = cursor.fetchall()
 
         # Display states
