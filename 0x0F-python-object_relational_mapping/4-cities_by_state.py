@@ -18,7 +18,7 @@ def list_cities(username, password, database):
         cursor = connection.cursor()
 
         # Execute query to retrieve cities
-        query = "SELECT * FROM cities ORDER BY states.id"
+        query = "SELECT * FROM cities ORDER BY states.id ASC"
         cursor.execute(query)
         cities = cursor.fetchall()
 
