@@ -19,8 +19,9 @@ def search_states(username, password, database, state_name):
         cursor = connection.cursor()
 
         # Execute query to retrieve states matching the state_name
-        cursor.execute("SELECT * FROM states WHERE name LIKE BINARY {} ORDER"
-                       "BY states.id".format(state_name))
+        cursor.execute("SELECT * FROM states WHERE name LIKE BINARY '{}' "
+                       "ORDER BY id ASC".format(state_name))
+
         states = cursor.fetchall()
 
         # Display states
