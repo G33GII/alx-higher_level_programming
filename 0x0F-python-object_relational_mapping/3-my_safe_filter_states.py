@@ -18,7 +18,7 @@ def search_states(username, password, database, state_name):
         cursor = connection.cursor()
 
         # Execute safe query to retrieve states matching the state_name
-        query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
+        query = "SELECT * FROM states WHERE name LIKE BINARY %s ORDER BY id ASC"
         cursor.execute(query, (state_name,))
         states = cursor.fetchall()
 
