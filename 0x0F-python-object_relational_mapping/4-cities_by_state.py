@@ -19,7 +19,7 @@ def list_cities(username, password, database):
 
         # Execute query to retrieve cities
         query = "SELECT cities.id, cities.name, states.name "
-        "FROM INNER JOIN states ON states.id=cities.state_id"
+        "FROM cities INNER JOIN states ON states.id=cities.state_id"
         cursor.execute(query)
         cities = cursor.fetchall()
 
