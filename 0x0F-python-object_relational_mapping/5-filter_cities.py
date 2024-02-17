@@ -1,56 +1,44 @@
 #!/usr/bin/python3
-"""  lists all states from the database hbtn_0e_0_usa """
+"""
+Lists all cities from the database hbtn_0e_0_usa for a given state.
+"""
 
-import sys
 import MySQLdb
-
-
 import sys
-import MySQLdb
 
 if __name__ == "__main__":
-    # Check if the correct number of arguments is provided
-    if len(sys.argv) != 5:
-        print("Usage: python script.py <username> <password> <database> <state_name>")
-        sys.exit(1)
+    # Connect to MySQL server using command-line arguments
+    db_connection = MySQLdb.connect(
+        host="localhost",
+        user=sys.argv[1],
+        passwd=sys.argv[2],
+        db=sys.argv[3],
+        port=3306
+    )
 
-    # Extract MySQL connection information from command-line arguments
-    username = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
+    # Create a cursor object to execute SQL queries
+    db_cursor = db_connection.cursor()
+
+    # Define the SQL query to retrieve cities for the given state
+    sql_query = """SELECT cities.name
+                   FROM cities
+                   INNER JOIN states ON states.id=cities.state_id
+                   WHERE states.name=%s"""
+
+    # Execute the SQL query with parameterized input for the state name
     state_name = sys.argv[4]
+    db_cursor.execute(sql_query, (state_name,))
 
-    try:
-        # Connect to MySQL server
-        db = MySQLdb.connect(
-            host='localhost',
-            user=username,
-            passwd=password,
-            db=database,
-            port=3306
-        )
-        cursor = db.cursor()
+    # Fetch all rows from the result set
+    rows = db_cursor.fetchall()
 
-        # Prepare SQL query with parameterized input to avoid SQL injection
-        query = "SELECT cities.id, cities.name FROM cities INNER JOIN states ON cities.state_id=states.id WHERE states.name=%s"
+    # Extract city names from fetched rows and create a list
+    city_names = [row[0] for row in rows]
 
-        # Execute SQL query with parameterized input
-        cursor.execute(query, (state_name,))
+    # Print the city names separated by commas
+    print(*city_names, sep=", ", end=".\n")
 
-        # Fetch all rows from the result set
-        rows = cursor.fetchall()
 
-        # Display the results
-        tmp = list(row[0] for row in rows)
-        print(*tmp, sep=", ")
-
-    except MySQLdb.Error as e:
-        print("MySQL Error {}: {}".format(e.args[0], e.args[1]))
-        sys.exit(1)
-
-    finally:
-        # Close cursor and database connection
-        if 'cursor' in locals():
-            cursor.close()
-        if 'db' in locals():
-            db.close()
+    # Close cursor and database connection
+    db_cursor.close()
+    db_connection.close()
