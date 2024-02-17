@@ -5,25 +5,43 @@ import sys
 import MySQLdb
 
 
-def list_cities(username, password, database):
+import sys
+import MySQLdb
+
+if __name__ == "__main__":
+    # Check if the correct number of arguments is provided
+    if len(sys.argv) != 5:
+        print("Usage: python script.py <username> <password> <database> <state_name>")
+        sys.exit(1)
+
+    # Extract MySQL connection information from command-line arguments
+    username = sys.argv[1]
+    password = sys.argv[2]
+    database = sys.argv[3]
+    state_name = sys.argv[4]
+
     try:
         # Connect to MySQL server
-        connection = MySQLdb.connect(
+        db = MySQLdb.connect(
             host='localhost',
             user=username,
             passwd=password,
             db=database,
             port=3306
         )
-        cursor = connection.cursor()
+        cursor = db.cursor()
 
-        # Execute query to retrieve cities
-        query = "SELECT * FROM cities ORDER BY id ASC"
-        cursor.execute(query)
-        cities = cursor.fetchall()
+        # Prepare SQL query with parameterized input to avoid SQL injection
+        query = "SELECT cities.id, cities.name FROM cities INNER JOIN states ON cities.state_id = states.id WHERE states.name = %s ORDER BY cities.id ASC"
 
-        # Display cities
-        tmp = list(row[0] for row in cities)
+        # Execute SQL query with parameterized input
+        cursor.execute(query, (state_name,))
+
+        # Fetch all rows from the result set
+        rows = cursor.fetchall()
+
+        # Display the results
+        tmp = list(row[0] for row in rows)
         print(*tmp, sep=", ")
 
     except MySQLdb.Error as e:
@@ -31,18 +49,8 @@ def list_cities(username, password, database):
         sys.exit(1)
 
     finally:
-        # Close connection
-        if connection:
-            connection.close()
-
-
-if __name__ == "__main__":
-    if len(sys.argv) != 4:
-        print("Usage: python script.py <username> <password> <database>")
-        sys.exit(1)
-
-    username = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
-
-    list_cities(username, password, database)
+        # Close cursor and database connection
+        if 'cursor' in locals():
+            cursor.close()
+        if 'db' in locals():
+            db.close()
