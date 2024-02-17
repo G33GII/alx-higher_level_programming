@@ -18,8 +18,8 @@ def list_cities(username, password, database):
         cursor = connection.cursor()
 
         # Execute query to retrieve cities
-        query = "SELECT cities.id, cities.name, states.name "
-        "FROM cities INNER JOIN states ON states.id=cities.state_id"
+        query = "SELECT cities.id, cities.name, states.name FROM "
+        "cities INNER JOIN states ON states.id=cities.state_id"
         cursor.execute(query)
         cities = cursor.fetchall()
 
