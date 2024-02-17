@@ -31,11 +31,12 @@ if __name__ == "__main__":
         cursor = db.cursor()
 
         # Prepare SQL query with parameterized input to avoid SQL injection
-        query = """SELECT cities.name FROM cities INNER JOIN states ON
-                    states.id=cities.state_id WHERE states.name=%s"""
+        query =
 
         # Execute SQL query with parameterized input
-        cursor.execute(query, (state_name,))
+        cursor.execute("""SELECT cities.name FROM
+                       cities INNER JOIN states ON states.id=cities.state_id
+                       WHERE states.name=%s""", (state_name,))
 
         # Fetch all rows from the result set
         rows = cursor.fetchall()
