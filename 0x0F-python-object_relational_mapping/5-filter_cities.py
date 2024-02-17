@@ -33,8 +33,8 @@ if __name__ == "__main__":
     rows = db_cursor.fetchall()
 
     # Extract city names from fetched rows and create a list
-    city_names = [row[0] for row in rows]
-
+    city_names = list(row[0] for row in rows)
+    
     # Print the city names separated by commas
     print(*city_names, sep=", ", end=".\n")
 
