@@ -29,8 +29,8 @@ if __name__ == "__main__":
 
     # Execute SQL query with parameterized input
     cursor.execute("""SELECT cities.name FROM
-                    cities INNER JOIN states ON states.id=cities.state_id
-                    WHERE states.name=%s""", (state_name,))
+                cities INNER JOIN states ON states.id=cities.state_id
+                WHERE states.name=%s""", (state_name,))
 
     # Fetch all rows from the result set
     rows = cursor.fetchall()
