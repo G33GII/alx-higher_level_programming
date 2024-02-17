@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-Lists all cities with their corresponding states from the database hbtn_0e_0_usa
+Lists all cities with their corresponding states
+            from the database hbtn_0e_0_usa
 """
 
 import MySQLdb
@@ -25,9 +26,8 @@ if __name__ == "__main__":
         # Create a cursor object to execute SQL queries
         cursor = db.cursor()
 
-        # Execute the SQL query to retrieve cities and their corresponding states
         cursor.execute("""SELECT cities.id, cities.name, states.name FROM
-                        cities INNER JOIN states ON states.id=cities.state_id""")
+                cities INNER JOIN states ON states.id=cities.state_id""")
 
         # Fetch all rows from the result set
         rows = cursor.fetchall()
