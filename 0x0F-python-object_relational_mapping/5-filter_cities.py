@@ -31,7 +31,8 @@ if __name__ == "__main__":
         cursor = db.cursor()
 
         # Prepare SQL query with parameterized input to avoid SQL injection
-        query = "SELECT cities.name FROM cities INNER JOIN states ON cities.state_id = states.id WHERE states.name = %s"
+        query = """SELECT cities.name FROM cities INNER JOIN states ON
+                    states.id=cities.state_id WHERE states.name=%s"""
 
         # Execute SQL query with parameterized input
         cursor.execute(query, (state_name,))
