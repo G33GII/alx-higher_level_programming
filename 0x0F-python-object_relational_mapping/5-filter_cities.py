@@ -38,7 +38,6 @@ if __name__ == "__main__":
     # Print the city names separated by commas
     print(*city_names, sep=", ", end=".\n")
 
-
     # Close cursor and database connection
     db_cursor.close()
     db_connection.close()
