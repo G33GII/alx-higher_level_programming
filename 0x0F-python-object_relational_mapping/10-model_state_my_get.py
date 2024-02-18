@@ -9,7 +9,8 @@ from model_state import Base, State
 if __name__ == "__main__":
     # Check if the correct number of arguments is provided
     if len(sys.argv) != 5:
-        print("Usage: python script.py <username> <password> <database> <state_name>")
+        print("""Usage: python
+              script.py <username> <password> <database> <state_name>""")
         sys.exit(1)
 
     # Extract MySQL connection information from command-line arguments
