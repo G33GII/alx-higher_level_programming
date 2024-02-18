@@ -26,7 +26,7 @@ if __name__ == "__main__":
     session = Session()
 
     # Query and print the first State object
-    first_state = session.query(State).order_by(State.id).first()
+    first_state = session.query(State).first()
 
     # Check if a state is found
     if first_state:
