@@ -30,7 +30,7 @@ if __name__ == "__main__":
 
     # Check if a state is found
     if first_state:
-        print(first_state.id, first_state.name, sep=": ")
+        print(f"{first_state.id}: {first_state.name}")
     else:
         print("Nothing")
 
