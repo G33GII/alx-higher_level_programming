@@ -23,8 +23,6 @@ if __name__ == "__main__":
     # Create engine to connect to MySQL server
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
                            .format(username, password, database))
-    Base.metadata.create_all(engine)
-
 
     # Create session maker
     Session = sessionmaker(bind=engine)
@@ -37,7 +35,7 @@ if __name__ == "__main__":
 
     # Display the results with specific formatting
     for state in states:
-        print("{}: {}".format(state.id, state.name))
+        print(state.id, state.name, sep=": ")
 
     # Close session
     session.close()
