@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """Python3 Script"""
 
-import sys
 import MySQLdb
+import sys
 
 
 def list_states(username, password, database):
