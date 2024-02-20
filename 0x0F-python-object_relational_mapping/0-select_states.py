@@ -6,7 +6,7 @@ import MySQLdb
 
 
 def list_states(username, password, database):
-    # Connect to MySQL server
+    """Connect to MySQL server"""
     try:
         connection = MySQLdb.connect(
             host='localhost',
