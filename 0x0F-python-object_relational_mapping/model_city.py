@@ -17,4 +17,5 @@ class City(Base):
     state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
 
     def __repr__(self):
-        return "<City(id='%s', name='%s', state_id='%s')>" % (self.id, self.name, self.state_id)
+        return "<City(id='%s', name='%s', state_id='%s')>" % (self.id, self.name,
+                                                              self.state_id)
