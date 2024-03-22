@@ -10,6 +10,7 @@ from relationship_city import City
 
 def create_state_and_city(username, password, db_name):
     """Create the State "California" with the City "San Francisco""""
+
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
                            .format(username, password, db_name))
     Base.metadata.create_all(engine)
