@@ -8,8 +8,10 @@ from model_state import Base, State
 from model_city import City
 
 
-def fetch_cities_by_state(username, password, db_name):
+if __name__ == "__main__":
     """Fetch and print all City objects from the database"""
+
+    username, password, db_name = sys.argv[1:]
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
                            .format(username, password, db_name))
     Base.metadata.create_all(engine)
@@ -21,8 +23,3 @@ def fetch_cities_by_state(username, password, db_name):
 
     for city in cities:
         print("{}: ({}) {}".format(city.state.name, city.id, city.name))
-
-
-if __name__ == "__main__":
-    username, password, db_name = sys.argv[1:]
-    fetch_cities_by_state(username, password, db_name)
