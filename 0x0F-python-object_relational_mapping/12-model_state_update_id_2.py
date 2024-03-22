@@ -8,7 +8,7 @@ from model_state import Base, State
 
 def change_state_name(username, password, db_name):
     """Change the name of the State where id = 2 to New Mexico"""
-    
+
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
                            .format(username, password, db_name),
                            pool_pre_ping=True)
@@ -21,9 +21,6 @@ def change_state_name(username, password, db_name):
     if state_to_change:
         state_to_change.name = 'New Mexico'
         session.commit()
-        print("State name changed successfully.")
-    else:
-        print("State with id=2 not found.")
 
 if __name__ == "__main__":=
     if len(sys.argv) != 4:
