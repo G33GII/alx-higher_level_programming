@@ -1,6 +1,8 @@
 #!/usr/bin/python3
-"""Script to create the State "California"
-with the City "San Francisco" from the database"""
+"""
+Script to create the State "California"
+with the City "San Francisco" from the database
+"""
 
 import sys
 from sqlalchemy import create_engine
