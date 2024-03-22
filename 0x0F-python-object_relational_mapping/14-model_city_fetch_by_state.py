@@ -24,6 +24,8 @@ if __name__ == "__main__":
     for city in cities:
         print("{}: ({}) {}".format(city.state.name, city.id, city.name))
 
-    # ct = session.query(State.name, City.id, City.name).filter(State.id == City.state_id)
+    """
+    ct = session.query(State.name, City.id, City.name).filter(State.id == City.state_id)
     for instance in ct:
         print(instance[0] + ": (" + str(instance[1]) + ") " + instance[2])
+    """
