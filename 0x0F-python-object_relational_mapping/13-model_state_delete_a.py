@@ -26,6 +26,7 @@ def delete_states_with_a(username, password, db_name):
             session.delete(state)
         session.commit()
 
+
 if __name__ == "__main__":
     username, password, db_name = sys.argv[1:]
     delete_states_with_a(username, password, db_name)
