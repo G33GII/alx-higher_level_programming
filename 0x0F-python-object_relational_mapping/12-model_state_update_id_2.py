@@ -22,9 +22,5 @@ def change_state_name(username, password, db_name):
         session.commit()
 
 if __name__ == "__main__":=
-    if len(sys.argv) != 4:
-        print("Usage: {} <username> <password> <database_name>".format(sys.argv[0]))
-        sys.exit(1)
-
     username, password, db_name = sys.argv[1:]
     change_state_name(username, password, db_name)
