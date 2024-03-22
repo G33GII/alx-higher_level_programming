@@ -16,5 +16,6 @@ class City(Base):
     state = relationship("State", back_populates="cities")
 
     def __repr__(self):
+        """ __repr """"
         return "<City(id='%s', name='%s', state_id='%s')>" % (
             self.id, self.name, self.state_id)

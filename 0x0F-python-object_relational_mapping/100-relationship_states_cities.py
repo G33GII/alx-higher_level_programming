@@ -9,9 +9,10 @@ from relationship_state import Base, State
 from relationship_city import City
 
 
-def create_state_and_city(username, password, db_name):
+if __name__ == "__main__":
     """Create the State "California" with the City "San Francisco""""
 
+    username, password, db_name = sys.argv[1:]
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
                            .format(username, password, db_name))
     Base.metadata.create_all(engine)
@@ -24,9 +25,3 @@ def create_state_and_city(username, password, db_name):
     session.add(california)
     session.add(san_francisco)
     session.commit()
-
-
-if __name__ == "__main__":
-
-    username, password, db_name = sys.argv[1:]
-    create_state_and_city(username, password, db_name)
