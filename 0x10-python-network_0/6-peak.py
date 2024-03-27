@@ -1,3 +1,6 @@
+#!/usr/bin/python3
+#Python scritp
+
 def find_peak(list_of_integers):
     # Define the bounds of the search space
     left = 0
