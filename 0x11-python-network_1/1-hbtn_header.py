@@ -10,6 +10,7 @@ if __name__ == "__main__":
     # Send a request to the URL
     with urllib.request.urlopen(url) as response:
         # Check if the 'X-Request-Id' header is present in the response
+        print(response.headers)
         if 'X-Request-Id' in response.headers:
             request_id = response.headers['X-Request-Id']
             print(f"Value of X-Request-Id variable: {request_id}")
