@@ -20,4 +20,4 @@ if __name__ == "__main__":
     response = requests.post(url, data=data)
 
     # Display the body of the response
-    print(f"Your email is: {response.text}")
+    print(response.text)
