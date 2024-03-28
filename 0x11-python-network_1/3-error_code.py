@@ -13,7 +13,10 @@ if __name__ == "__main__":
     try:
         # Send a request to the URL
         with request.urlopen(url) as response:
-            # Get the charset from the response headers, defaulting to 'utf-8' if not found
+            """
+            Get the charset from the response headers,
+            defaulting to 'utf-8' if not found
+            """
             charset = response.headers.get_content_charset(failobj='utf-8')
 
             # Read and decode the body of the response using the charset
