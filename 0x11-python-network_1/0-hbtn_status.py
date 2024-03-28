@@ -4,11 +4,13 @@
 import urllib.request
 
 if __name__ == "__main__":
-    with urllib.request.urlopen('https://alx-intranet.hbtn.io/status') as response:
+    with urllib.request.urlopen('https://alx-intranet.hbtn.io/status'
+                                ) as response:
         # Read the response content only once
         response_content = response.read()
 
-        # Get the charset from the response headers, defaulting to 'utf-8' if not found
+        """Get the charset from the response headers,
+        defaulting to 'utf-8' if not found"""
         charset = response.headers.get_content_charset(failobj='utf-8')
 
         # Decode the content using the charset
