@@ -14,7 +14,7 @@ if __name__ == "__main__":
     values = {'email': email}
 
     # Encode the email as a parameter
-    data = urllib.parse.urlencode(values).encode('ascii')
+    data = urllib.parse.urlencode(values)
     data = data.encode('ascii')
 
     # Send a POST request to the URL with the email as a parameter
