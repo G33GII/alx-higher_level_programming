@@ -11,6 +11,6 @@ if __name__ == "__main__":
     response = requests.get(url)
 
     # Display the body of the response with tabulation before each line
-    print("- body response:")
+    print("Body response:")
     for line in response.text.split('\n'):
         print(f"\t- {line}")
