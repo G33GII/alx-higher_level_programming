@@ -13,7 +13,8 @@ if __name__ == "__main__":
     email = sys.argv[2]
 
     # Encode the email as a parameter
-    data = urllib.parse.urlencode({'email': email}).encode()
+    data = urllib.parse.urlencode({'email': email}).encode('ascii')
+    data = data.encode('ascii')
 
     # Send a POST request to the URL with the email as a parameter
     with urllib.request.urlopen(url, data=data) as response:
