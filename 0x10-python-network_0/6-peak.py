@@ -1,24 +1,29 @@
 #!/usr/bin/python3
-#Python scritp
+
 
 def find_peak(list_of_integers):
-    # Define the bounds of the search space
-    left = 0
-    right = len(list_of_integers) - 1
 
-    # Perform binary search
-    while left < right:
-        mid = (left + right) // 2
+    if list_of_integers is None or len(list_of_integers) == 0:
+        return None
 
-        # Compare the middle element with its neighbors
-        if list_of_integers[mid] < list_of_integers[mid + 1]:
-            left = mid + 1
+    if len(list_of_integers) == 1:
+        return list_of_integers[0]
+
+    mid_idx = int(len(list_of_integers) / 2)
+
+    if mid_idx != len(list_of_integers) - 1:
+        if list_of_integers[mid_idx - 1] < list_of_integers[mid_idx] and\
+           list_of_integers[mid_idx + 1] < list_of_integers[mid_idx]:
+            return list_of_integers[mid_idx]
+    else:
+        if list_of_integers[mid_idx - 1] < list_of_integers[mid_idx]:
+            return list_of_integers[mid_idx]
         else:
-            right = mid
+            return list_of_integers[mid_idx - 1]
 
-    # Return the peak element
-    return list_of_integers[left]
+    if list_of_integers[mid_idx - 1] > list_of_integers[mid_idx]:
+        a_list = list_of_integers[0:mid_idx]
+    else:
+        a_list = list_of_integers[mid_idx + 1:]
 
-
-# Test the function
-print(find_peak([1, 3, 20, 4, 1, 0]))  # Example test case
+    return find_peak(a_list)
