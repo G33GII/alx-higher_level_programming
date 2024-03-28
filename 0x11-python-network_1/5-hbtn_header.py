@@ -18,4 +18,4 @@ if __name__ == "__main__":
     # Check if 'X-Request-Id' is present in the response headers
     if 'X-Request-Id' in response.headers:
         request_id = response.headers['X-Request-Id']
-        print(f"Value of X-Request-Id variable: {request_id}")
+        print(request_id)
