@@ -9,11 +9,8 @@ if __name__ == "__main__":
         response_content = response.read()
         bytes = type(response_content)
 
-        # Get the charset from the response headers, defaulting to 'utf-8' if not found
-        charset = response.headers.get_content_charset(failobj='utf-8')
-
         # Decode the content using the charset
-        utf8_content = response_content.decode(charset)
+        utf8_content = response_content.decode('utf-8')
 
         print("Body response:")
         print(f"    - type: {bytes}")  # Since we are dealing with bytes
