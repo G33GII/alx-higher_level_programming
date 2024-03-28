@@ -14,6 +14,6 @@ if __name__ == "__main__":
 
         print("Body response:")
         # Since we are dealing with bytes
-        print(f"\t- type: {response.read()}")
+        print(f"\t- type: {content_type}")
         print(f"\t- content: {response_content}")
         print(f"\t- utf8 content: {utf8_content}")
