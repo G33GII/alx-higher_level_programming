@@ -22,6 +22,6 @@ if __name__ == "__main__":
     with urllib.request.urlopen(combo) as response:
         # Read and decode the body of the response in utf-8
         body = response.read().decode('utf-8')
-        if 'X-Request-Id' in response.headers:
-            request_id = response.headers['X-Request-Id']
-            print(request_id)
+        if 'email' in boby:
+            
+            print(f"Your email is: {request_id}")
