@@ -17,7 +17,8 @@ if __name__ == "__main__":
     data = data.encode('ascii')
 
     # Send a POST request to the URL with the email as a parameter
-    with urllib.request.urlopen(url, data=data) as response:
+    combo = urllib.request.Request(url, data)
+    with urllib.request.urlopen(combo) as response:
         # Read and decode the body of the response in utf-8
         body = response.read().decode('utf-8')
         print(body)
