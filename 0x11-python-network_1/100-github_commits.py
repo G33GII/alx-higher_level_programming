@@ -30,4 +30,5 @@ if __name__ == "__main__":
     else:
         # Print an error message if the request was not successful
         print(
-            f"Error: Unable to fetch commits. Status code: {response.status_code}")
+            f"Error: Unable to fetch commits. Status code: {
+                response.status_code}")
