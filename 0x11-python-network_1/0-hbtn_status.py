@@ -17,6 +17,6 @@ if __name__ == "__main__":
         utf8_content = response_content.decode(charset)
 
         print("Body response:")
-        print(f"    - type: bytes")  # Since we are dealing with bytes
-        print(f"    - content: {response_content}")
-        print(f"    - utf8 content: {utf8_content}")
+        print(f"\t- type: bytes")  # Since we are dealing with bytes
+        print(f"\t- content: {response_content}")
+        print(f"\t- utf8 content: {utf8_content}")
