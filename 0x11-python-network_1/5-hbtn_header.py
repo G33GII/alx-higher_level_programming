@@ -19,5 +19,3 @@ if __name__ == "__main__":
     if 'X-Request-Id' in response.headers:
         request_id = response.headers['X-Request-Id']
         print(f"Value of X-Request-Id variable: {request_id}")
-    else:
-        print("X-Request-Id header not found in the response.")
