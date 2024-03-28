@@ -11,9 +11,10 @@ import sys
 if __name__ == "__main__":
     url = sys.argv[1]
     email = sys.argv[2]
+    values = {'email': email}
 
     # Encode the email as a parameter
-    data = urllib.parse.urlencode({'email': email}).encode('ascii')
+    data = urllib.parse.urlencode(values).encode('ascii')
     data = data.encode('ascii')
 
     # Send a POST request to the URL with the email as a parameter
