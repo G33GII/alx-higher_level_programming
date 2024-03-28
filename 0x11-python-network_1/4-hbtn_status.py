@@ -12,5 +12,5 @@ if __name__ == "__main__":
 
     # Display the body of the response with tabulation before each line
     print("Body response:")
-    for line in response.text.split('\n'):
-        print(f"\t- {line}")
+    print("\t- type: {}".format(type(response.text)))
+    print("\t- content: {}".format(response.text))
