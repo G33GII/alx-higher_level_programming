@@ -10,6 +10,6 @@ if __name__ == "__main__":
             'utf-8')  # Decoding content to UTF-8
 
         print("Body response:")
-        print(f"    - type: {content_type}")
-        print(f"    - content: {response_content}")
-        print(f"    - utf8 content: {utf8_content}")
+        print(f"\t- type: {content_type}")
+        print(f"\t- content: {response_content}")
+        print(f"\t- utf8 content: {utf8_content}")
