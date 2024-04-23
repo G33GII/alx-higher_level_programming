@@ -1,4 +1,4 @@
-#!/usr/bin / node
+#!/usr/bin/node
 
 // Import the built-in Node.js 'fs' module
 const fs = require('fs');
